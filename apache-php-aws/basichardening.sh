@@ -27,6 +27,10 @@ echo Change config to use basic security header
 sed -i 's/#Header set X-Content-Type-Options: "nosniff"/Header set X-Content-Type-Options: "nosniff"/g' /etc/apache2/conf-enabled/security.conf
 sed -i 's/#Header set X-Frame-Options: "sameorigin"/Header set X-Frame-Options: "sameorigin"/g' /etc/apache2/conf-enabled/security.conf
 
+echo Add additional HTTP-Security-Header
+echo 'Header set X-XSS-Protection: "1; mode=block"' >> /etc/apache2/conf-enabled/security.conf
+echo 'Header set Referrer-Policy "origin-when-cross-origin"' >> /etc/apache2/conf-enabled/security.conf
+
 echo Change PHP-config to prevent Info Disclosure
 sed -i 's/expose_php = On/expose_php = Off/g' /etc/php/7.0/apache2/php.ini
 
