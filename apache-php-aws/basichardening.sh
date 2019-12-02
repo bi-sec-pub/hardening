@@ -50,3 +50,6 @@ echo Restart Apache
 /bin/systemctl restart apache2
 
 echo Now create your own specific listener as desired
+
+# certbot /Let's encrypt: Denkt an den CronJob
+## 1 8 * * * /usr/bin/certbot renew 2>&1
