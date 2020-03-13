@@ -1,3 +1,7 @@
+# bi-sec cb, 2020
+# Sample Config for Apache HTTP Header Hardening
+# Copy-Adapt-Pase to httpd.conf / apache2.conf
+
 Header set X-XSS-Protection "1; mode=block"
 Header set X-Frame-Options: "sameorigin"
 Header set X-Content-Type-Options: "nosniff"
