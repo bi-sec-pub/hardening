@@ -6,5 +6,8 @@ Header set Referrer-Policy "origin-when-cross-origin"
 Header set Content-Security-Policy "default-src 'self';"
 Header set Expect-CT "max-age=86400, enforce, report-uri='https://r.bi-sec.de'"
 Header edit Set-Cookie ^(.*)$ $1;SameSite=strict;httpOnly
+# Only use if TLS is enabled
 #Header edit Set-Cookie ^(.*)$ $1;HttpOnly;Secure;SameSite=strict
 Header unset X-Powered-By
+# Only applies for Server-Headers from Reverse-Proxy-Servers
+Header unset Server
