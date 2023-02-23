@@ -32,11 +32,11 @@ echo 'Header set X-XSS-Protection: "1; mode=block"' >> /etc/apache2/conf-enabled
 echo 'Header set Referrer-Policy "origin-when-cross-origin"' >> /etc/apache2/conf-enabled/security.conf
 
 echo Change PHP-config to prevent Info Disclosure
-sed -i 's/expose_php = On/expose_php = Off/g' /etc/php/7.0/apache2/php.ini
+sed -i 's/expose_php = On/expose_php = Off/g' /etc/php/7.4/apache2/php.ini
 
 echo Change PHP-config to use basic security advises
-sed -i 's/;session.cookie_secure =/session.cookie_secure = 1/g' /etc/php/7.0/apache2/php.ini
-sed -i 's/session.cookie_httponly =/session.cookie_httponly = 1/g' /etc/php/7.0/apache2/php.ini
+sed -i 's/;session.cookie_secure =/session.cookie_secure = 1/g' /etc/php/7.4/apache2/php.ini
+sed -i 's/session.cookie_httponly =/session.cookie_httponly = 1/g' /etc/php/7.4/apache2/php.ini
 
 echo Use Apache-Conf to set SameSite-Attributes to cookies 
 #echo 'Header edit Set-Cookie ^(.*)$ $1;HttpOnly;Secure;SameSite=strict' >> /etc/apache2/conf-enabled/security.conf
