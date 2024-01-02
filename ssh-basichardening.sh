@@ -19,3 +19,6 @@ sed -i 's/#PasswordAuthentication yes/PasswordAuthentication no/g' /etc/ssh/sshd
 
 ## Install fail2ban!
 # apt-get install fail2ban
+
+# restart ssh service
+#/etc/init.d ssh restart
